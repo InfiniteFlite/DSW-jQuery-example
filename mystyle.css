@@ -10,4 +10,9 @@ p{
 img {
 	width: 20%;
 	display: none;
+  position:absolute;
+}
+
+#photoZoomBlur{
+  position:absolute;
 }

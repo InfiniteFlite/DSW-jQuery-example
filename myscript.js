@@ -1,4 +1,5 @@
 var numtoggle = 0;
+var numImageClicks = 0;
 
 $(document).ready(function() {
 	$("h1").click(function() {
@@ -22,10 +23,18 @@ $(document).ready(function() {
 		$("#p2").toggle();
 		$("#p3").toggle();
 	});
-	$("img").hover(function(){
-		$("img").css({"width":"50%"});
-	},
-		function(){
-    $("img").css({"width":"20%"});
+	$("img").click(function(){
+		if(numImageClicks == 0)
+		{
+		$("img").css({"width":"30%", "display":"block","margin-left":"35%","margin-top":"-15%"});
+		$("#photoZoomBlur").css({"width":"100vw","height":"120vh","margin-top":"-20%","background-color":"black","opacity":".6"});
+		numImageClicks = 1;
+		}
+		else if(numImageClicks == 1)
+		{
+			$("img").css({"width":"20%", "display":"block","margin-left":"auto","margin-top":"auto"});
+			$("#photoZoomBlur").css({"width":"100vw","height":"120vh","margin-top":"-20%","background-color":"black","opacity":"0"});
+			numImageClicks = 0;
+		}
 	});
 });
